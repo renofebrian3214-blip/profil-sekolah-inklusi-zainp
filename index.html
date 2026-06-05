@@ -4,20 +4,23 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Sekolah Inklusi</title>
+<title>Sekolah Inklusi Indonesia</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 
 :root{
---primary:#2563eb;
---secondary:#fa00ed;
---light:#f8fafc;
+--pink:#ec4899;
+--pink-light:#fdf2f8;
+
+--blue:#3b82f6;
+--blue-light:#eff6ff;
+
+--dark:#1e293b;
+--gray:#64748b;
 --white:#ffffff;
---accent:#f59e0b;
 }
 
 *{
@@ -29,18 +32,15 @@ scroll-behavior:smooth;
 }
 
 body{
-background:#f8fafc;
-color:#334155;
+background:#fff;
+color:var(--dark);
+overflow-x:hidden;
 }
 
 .container{
 width:90%;
 max-width:1200px;
 margin:auto;
-}
-
-section{
-padding:90px 0;
 }
 
 /* NAVBAR */
@@ -53,35 +53,37 @@ width:100%;
 background:rgba(255,255,255,.95);
 backdrop-filter:blur(10px);
 z-index:1000;
-box-shadow:0 2px 20px rgba(0,0,0,.05);
+box-shadow:0 3px 15px rgba(0,0,0,.05);
 }
 
-.nav-container{
+.nav-wrapper{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:15px 0;
+padding:18px 0;
 }
 
 .logo{
-font-size:1.4rem;
+font-size:1.5rem;
 font-weight:700;
-color:var(--primary);
+background:linear-gradient(90deg,var(--pink),var(--blue));
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
 }
 
-.nav-links{
+.menu{
 display:flex;
-gap:25px;
+gap:30px;
 }
 
-.nav-links a{
+.menu a{
 text-decoration:none;
 font-weight:500;
-color:#334155;
+color:var(--dark);
 }
 
-.nav-links a:hover{
-color:var(--primary);
+.menu a:hover{
+color:var(--pink);
 }
 
 /* HERO */
@@ -90,38 +92,84 @@ color:var(--primary);
 height:100vh;
 display:flex;
 align-items:center;
-background:
-linear-gradient(rgba(37,99,235,.85),rgba(15,23,42,.85)),
-url('https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1600&q=80');
-background-size:cover;
-background-position:center;
-color:white;
+justify-content:center;
 text-align:center;
+padding:0 10%;
+
+background:
+linear-gradient(
+135deg,
+#ec4899 0%,
+#f472b6 30%,
+#60a5fa 70%,
+#2563eb 100%
+);
+
+color:white;
+position:relative;
+overflow:hidden;
+}
+
+.hero::before{
+content:"";
+position:absolute;
+width:700px;
+height:700px;
+background:rgba(255,255,255,.12);
+border-radius:50%;
+top:-250px;
+right:-150px;
+}
+
+.hero::after{
+content:"";
+position:absolute;
+width:500px;
+height:500px;
+background:rgba(255,255,255,.08);
+border-radius:50%;
+bottom:-200px;
+left:-150px;
+}
+
+.hero-content{
+position:relative;
+z-index:2;
+max-width:900px;
 }
 
 .hero h1{
-font-size:4rem;
+font-size:4.5rem;
+font-weight:800;
 margin-bottom:20px;
 }
 
 .hero p{
 font-size:1.2rem;
-max-width:800px;
-margin:auto;
+line-height:1.8;
 }
 
 .btn{
 display:inline-block;
 margin-top:30px;
-padding:15px 35px;
+padding:15px 40px;
 background:white;
-color:var(--primary);
-font-weight:600;
+color:var(--pink);
+font-weight:700;
 text-decoration:none;
 border-radius:50px;
+transition:.3s;
 }
 
-/* TITLE */
+.btn:hover{
+transform:translateY(-5px);
+}
+
+/* SECTION */
+
+section{
+padding:100px 0;
+}
 
 .section-title{
 text-align:center;
@@ -129,15 +177,18 @@ margin-bottom:60px;
 }
 
 .section-title h2{
-font-size:2.5rem;
-color:var(--secondary);
+font-size:2.8rem;
+background:linear-gradient(90deg,var(--pink),var(--blue));
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+margin-bottom:15px;
 }
 
 .section-title p{
-margin-top:10px;
+color:var(--gray);
 }
 
-/* CARDS */
+/* GRID */
 
 .grid{
 display:grid;
@@ -147,65 +198,110 @@ gap:25px;
 
 .card{
 background:white;
+border-radius:24px;
 padding:30px;
-border-radius:20px;
-box-shadow:0 10px 30px rgba(0,0,0,.08);
+box-shadow:0 15px 35px rgba(59,130,246,.12);
+border-top:6px solid var(--pink);
 transition:.3s;
 }
 
 .card:hover{
-transform:translateY(-8px);
+transform:translateY(-10px);
+box-shadow:0 20px 40px rgba(236,72,153,.18);
 }
 
 .card h3{
-color:var(--primary);
+color:var(--blue);
 margin-bottom:15px;
 }
 
-/* STAT */
+/* STATS */
 
 .stats{
-background:var(--primary);
+background:
+linear-gradient(
+90deg,
+var(--pink),
+var(--blue)
+);
 color:white;
 }
 
-.stat-grid{
+.stats-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 gap:30px;
 text-align:center;
 }
 
-.stat h3{
+.stats h3{
 font-size:3rem;
-}
-
-.stat p{
-margin-top:10px;
 }
 
 /* TIMELINE */
 
 .timeline{
 display:flex;
-flex-wrap:wrap;
-gap:25px;
 justify-content:center;
+flex-wrap:wrap;
+gap:20px;
 }
 
 .step{
 background:white;
 padding:25px;
+width:180px;
 border-radius:20px;
-width:220px;
-box-shadow:0 8px 20px rgba(0,0,0,.08);
+box-shadow:0 10px 25px rgba(0,0,0,.08);
 text-align:center;
+}
+
+.number{
+width:50px;
+height:50px;
+border-radius:50%;
+background:linear-gradient(90deg,var(--pink),var(--blue));
+color:white;
+display:flex;
+justify-content:center;
+align-items:center;
+font-weight:700;
+margin:auto;
+margin-bottom:15px;
+}
+
+/* SARPRAS */
+
+.facility{
+background:linear-gradient(135deg,#fdf2f8,#eff6ff);
+padding:25px;
+border-radius:20px;
+}
+
+.facility h3{
+margin-bottom:15px;
+color:var(--blue);
+}
+
+/* TESTIMONI */
+
+.testimonial{
+background:linear-gradient(135deg,#fdf2f8,#eff6ff);
+padding:50px;
+border-radius:25px;
+text-align:center;
+}
+
+.testimonial p{
+font-size:1.15rem;
+font-style:italic;
+line-height:1.8;
 }
 
 /* CONTACT */
 
 .contact{
-background:var(--secondary);
+background:#1e293b;
 color:white;
 text-align:center;
 }
@@ -216,10 +312,10 @@ margin:auto;
 }
 
 footer{
-background:#020617;
+background:#0f172a;
 color:white;
-padding:25px;
 text-align:center;
+padding:20px;
 }
 
 /* MOBILE */
@@ -227,11 +323,19 @@ text-align:center;
 @media(max-width:768px){
 
 .hero h1{
-font-size:2.3rem;
+font-size:2.7rem;
 }
 
-.nav-links{
+.hero p{
+font-size:1rem;
+}
+
+.menu{
 display:none;
+}
+
+section{
+padding:70px 0;
 }
 
 }
@@ -242,12 +346,14 @@ display:none;
 <body>
 
 <nav>
-<div class="container nav-container">
+<div class="container nav-wrapper">
 
-<div class="logo">Sekolah Inklusi Maju Jaya</div>
+<div class="logo">
+SEKOLAH INKLUSI
+</div>
 
-<div class="nav-links">
-<a href="#profil">Profil</a>
+<div class="menu">
+<a href="#tentang">Tentang</a>
 <a href="#manajemen">Manajemen</a>
 <a href="#layanan">Layanan</a>
 <a href="#sarpras">Sarpras</a>
@@ -259,19 +365,16 @@ display:none;
 
 <section class="hero">
 
-<div class="container">
+<div class="hero-content">
 
-<h1 data-aos="fade-up">
-Pendidikan Untuk Semua
-</h1>
+<h1>Pendidikan Untuk Semua</h1>
 
-<p data-aos="fade-up" data-aos-delay="200">
-Mewujudkan sekolah yang ramah, setara, dan mendukung
-perkembangan seluruh peserta didik termasuk
-Anak Berkebutuhan Khusus (ABK).
+<p>
+Mewujudkan pendidikan yang ramah, setara, dan berkualitas
+bagi seluruh peserta didik termasuk Anak Berkebutuhan Khusus (ABK).
 </p>
 
-<a href="#profil" class="btn" data-aos="zoom-in" data-aos-delay="400">
+<a href="#tentang" class="btn">
 Pelajari Lebih Lanjut
 </a>
 
@@ -279,7 +382,7 @@ Pelajari Lebih Lanjut
 
 </section>
 
-<section id="profil">
+<section id="tentang">
 
 <div class="container">
 
@@ -290,19 +393,19 @@ Pelajari Lebih Lanjut
 
 <div class="grid">
 
-<div class="card" data-aos="fade-up">
+<div class="card">
 <h3>Kesetaraan</h3>
-<p>Semua peserta didik memiliki hak yang sama untuk memperoleh pendidikan.</p>
+<p>Setiap peserta didik memiliki hak yang sama untuk memperoleh pendidikan.</p>
 </div>
 
-<div class="card" data-aos="fade-up">
+<div class="card">
 <h3>Keberagaman</h3>
-<p>Menghargai perbedaan karakteristik dan kebutuhan belajar.</p>
+<p>Menghargai setiap karakteristik dan kebutuhan peserta didik.</p>
 </div>
 
-<div class="card" data-aos="fade-up">
+<div class="card">
 <h3>Aksesibilitas</h3>
-<p>Lingkungan sekolah yang mudah diakses oleh semua peserta didik.</p>
+<p>Lingkungan sekolah yang mudah diakses oleh seluruh peserta didik.</p>
 </div>
 
 </div>
@@ -315,24 +418,24 @@ Pelajari Lebih Lanjut
 
 <div class="container">
 
-<div class="stat-grid">
+<div class="stats-grid">
 
-<div class="stat">
+<div>
 <h3>100%</h3>
 <p>Akses Pendidikan</p>
 </div>
 
-<div class="stat">
-<h3>24+</h3>
-<p>Layanan Inklusif</p>
-</div>
-
-<div class="stat">
+<div>
 <h3>4</h3>
-<p>Jenis Dukungan ABK</p>
+<p>Jenis Layanan ABK</p>
 </div>
 
-<div class="stat">
+<div>
+<h3>24+</h3>
+<p>Program Inklusi</p>
+</div>
+
+<div>
 <h3>∞</h3>
 <p>Peluang Berkembang</p>
 </div>
@@ -355,7 +458,7 @@ Pelajari Lebih Lanjut
 
 <div class="card">
 <h3>Planning</h3>
-<p>Menentukan tujuan pendidikan dan strategi pencapaian.</p>
+<p>Menentukan tujuan pendidikan dan strategi pencapaiannya.</p>
 </div>
 
 <div class="card">
@@ -365,7 +468,7 @@ Pelajari Lebih Lanjut
 
 <div class="card">
 <h3>Leading</h3>
-<p>Memotivasi seluruh warga sekolah.</p>
+<p>Mengarahkan dan memotivasi seluruh warga sekolah.</p>
 </div>
 
 <div class="card">
@@ -385,28 +488,29 @@ Pelajari Lebih Lanjut
 
 <div class="section-title">
 <h2>Manajemen Layanan Khusus</h2>
+<p>Proses layanan peserta didik berkebutuhan khusus.</p>
 </div>
 
 <div class="timeline">
 
 <div class="step">
-<h3>Psikologis</h3>
-<p>Asesmen awal peserta didik.</p>
+<div class="number">1</div>
+Psikologis
 </div>
 
 <div class="step">
-<h3>Fisik</h3>
-<p>Identifikasi kebutuhan fisik.</p>
+<div class="number">2</div>
+Fisik
 </div>
 
 <div class="step">
-<h3>Akademik</h3>
-<p>Analisis kemampuan belajar.</p>
+<div class="number">3</div>
+Akademik
 </div>
 
 <div class="step">
-<h3>Profil ABK</h3>
-<p>Penyusunan layanan individual.</p>
+<div class="number">4</div>
+Profil ABK
 </div>
 
 </div>
@@ -425,9 +529,11 @@ Pelajari Lebih Lanjut
 
 <div class="grid">
 
-<div class="card">
+<div class="facility">
 <h3>Tunanetra</h3>
 <ul>
+<li>Kartu Snellen</li>
+<li>Tes Ishihara</li>
 <li>Papan Braille</li>
 <li>Abacus</li>
 <li>Tongkat Tunanetra</li>
@@ -435,28 +541,31 @@ Pelajari Lebih Lanjut
 </ul>
 </div>
 
-<div class="card">
+<div class="facility">
 <h3>Tunarungu</h3>
 <ul>
 <li>Audiometer</li>
-<li>Hearing Aid</li>
 <li>Ruang Kedap Suara</li>
+<li>Hearing Aid</li>
+<li>Spatel</li>
 </ul>
 </div>
 
-<div class="card">
+<div class="facility">
 <h3>Tunagrahita</h3>
 <ul>
 <li>Tes WISC</li>
 <li>Tes Binet</li>
 <li>Papan Alfabet</li>
+<li>Kartu Huruf</li>
 </ul>
 </div>
 
-<div class="card">
+<div class="facility">
 <h3>Tunadaksa</h3>
 <ul>
 <li>Finger Goniometer</li>
+<li>Cock-Up Resting Splint</li>
 <li>Kanavel Table</li>
 <li>Vestibular Board</li>
 </ul>
@@ -478,12 +587,38 @@ Pelajari Lebih Lanjut
 
 <div class="timeline">
 
-<div class="step">1. Pendaftaran</div>
-<div class="step">2. Identifikasi</div>
-<div class="step">3. Asesmen</div>
-<div class="step">4. Profil ABK</div>
-<div class="step">5. Program Pembelajaran</div>
-<div class="step">6. Evaluasi</div>
+<div class="step"><div class="number">1</div>Pendaftaran</div>
+<div class="step"><div class="number">2</div>Identifikasi</div>
+<div class="step"><div class="number">3</div>Asesmen</div>
+<div class="step"><div class="number">4</div>Profil ABK</div>
+<div class="step"><div class="number">5</div>Program Pembelajaran</div>
+<div class="step"><div class="number">6</div>Evaluasi</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<div class="section-title">
+<h2>Testimoni</h2>
+</div>
+
+<div class="testimonial">
+
+<p>
+"Sekolah ini memberikan layanan yang sangat baik bagi anak kami.
+Lingkungan belajar yang ramah membantu perkembangan akademik,
+sosial, dan kemandirian anak."
+</p>
+
+<br>
+
+<strong>— Orang Tua Peserta Didik</strong>
 
 </div>
 
@@ -505,3 +640,12 @@ Pelajari Lebih Lanjut
 <p>🌐 www.sekolahinklusi.sch.id</p>
 
 </div>
+
+</section>
+
+<footer>
+© 2026 Sekolah Inklusi Indonesia | Pendidikan Untuk Semua
+</footer>
+
+</body>
+</html>
