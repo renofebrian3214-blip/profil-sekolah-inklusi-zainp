@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sekolah Inklusi</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+<style>
+
+:root{
+--primary:#2563eb;
+--secondary:#fa00ed;
+--light:#f8fafc;
+--white:#ffffff;
+--accent:#f59e0b;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#f8fafc;
+color:#334155;
+}
+
+.container{
+width:90%;
+max-width:1200px;
+margin:auto;
+}
+
+section{
+padding:90px 0;
+}
+
+/* NAVBAR */
+
+nav{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+background:rgba(255,255,255,.95);
+backdrop-filter:blur(10px);
+z-index:1000;
+box-shadow:0 2px 20px rgba(0,0,0,.05);
+}
+
+.nav-container{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 0;
+}
+
+.logo{
+font-size:1.4rem;
+font-weight:700;
+color:var(--primary);
+}
+
+.nav-links{
+display:flex;
+gap:25px;
+}
+
+.nav-links a{
+text-decoration:none;
+font-weight:500;
+color:#334155;
+}
+
+.nav-links a:hover{
+color:var(--primary);
+}
+
+/* HERO */
+
+.hero{
+height:100vh;
+display:flex;
+align-items:center;
+background:
+linear-gradient(rgba(37,99,235,.85),rgba(15,23,42,.85)),
+url('https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1600&q=80');
+background-size:cover;
+background-position:center;
+color:white;
+text-align:center;
+}
+
+.hero h1{
+font-size:4rem;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:1.2rem;
+max-width:800px;
+margin:auto;
+}
+
+.btn{
+display:inline-block;
+margin-top:30px;
+padding:15px 35px;
+background:white;
+color:var(--primary);
+font-weight:600;
+text-decoration:none;
+border-radius:50px;
+}
+
+/* TITLE */
+
+.section-title{
+text-align:center;
+margin-bottom:60px;
+}
+
+.section-title h2{
+font-size:2.5rem;
+color:var(--secondary);
+}
+
+.section-title p{
+margin-top:10px;
+}
+
+/* CARDS */
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+
+.card{
+background:white;
+padding:30px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+}
+
+.card h3{
+color:var(--primary);
+margin-bottom:15px;
+}
+
+/* STAT */
+
+.stats{
+background:var(--primary);
+color:white;
+}
+
+.stat-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:30px;
+text-align:center;
+}
+
+.stat h3{
+font-size:3rem;
+}
+
+.stat p{
+margin-top:10px;
+}
+
+/* TIMELINE */
+
+.timeline{
+display:flex;
+flex-wrap:wrap;
+gap:25px;
+justify-content:center;
+}
+
+.step{
+background:white;
+padding:25px;
+border-radius:20px;
+width:220px;
+box-shadow:0 8px 20px rgba(0,0,0,.08);
+text-align:center;
+}
+
+/* CONTACT */
+
+.contact{
+background:var(--secondary);
+color:white;
+text-align:center;
+}
+
+.contact-box{
+max-width:700px;
+margin:auto;
+}
+
+footer{
+background:#020617;
+color:white;
+padding:25px;
+text-align:center;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:2.3rem;
+}
+
+.nav-links{
+display:none;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+<div class="container nav-container">
+
+<div class="logo">Sekolah Inklusi Maju Jaya</div>
+
+<div class="nav-links">
+<a href="#profil">Profil</a>
+<a href="#manajemen">Manajemen</a>
+<a href="#layanan">Layanan</a>
+<a href="#sarpras">Sarpras</a>
+<a href="#kontak">Kontak</a>
+</div>
+
+</div>
+</nav>
+
+<section class="hero">
+
+<div class="container">
+
+<h1 data-aos="fade-up">
+Pendidikan Untuk Semua
+</h1>
+
+<p data-aos="fade-up" data-aos-delay="200">
+Mewujudkan sekolah yang ramah, setara, dan mendukung
+perkembangan seluruh peserta didik termasuk
+Anak Berkebutuhan Khusus (ABK).
+</p>
+
+<a href="#profil" class="btn" data-aos="zoom-in" data-aos-delay="400">
+Pelajari Lebih Lanjut
+</a>
+
+</div>
+
+</section>
+
+<section id="profil">
+
+<div class="container">
+
+<div class="section-title">
+<h2>Tentang Sekolah Inklusi</h2>
+<p>Pendidikan tanpa diskriminasi dan menghargai keberagaman.</p>
+</div>
+
+<div class="grid">
+
+<div class="card" data-aos="fade-up">
+<h3>Kesetaraan</h3>
+<p>Semua peserta didik memiliki hak yang sama untuk memperoleh pendidikan.</p>
+</div>
+
+<div class="card" data-aos="fade-up">
+<h3>Keberagaman</h3>
+<p>Menghargai perbedaan karakteristik dan kebutuhan belajar.</p>
+</div>
+
+<div class="card" data-aos="fade-up">
+<h3>Aksesibilitas</h3>
+<p>Lingkungan sekolah yang mudah diakses oleh semua peserta didik.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="stats">
+
+<div class="container">
+
+<div class="stat-grid">
+
+<div class="stat">
+<h3>100%</h3>
+<p>Akses Pendidikan</p>
+</div>
+
+<div class="stat">
+<h3>24+</h3>
+<p>Layanan Inklusif</p>
+</div>
+
+<div class="stat">
+<h3>4</h3>
+<p>Jenis Dukungan ABK</p>
+</div>
+
+<div class="stat">
+<h3>∞</h3>
+<p>Peluang Berkembang</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="manajemen">
+
+<div class="container">
+
+<div class="section-title">
+<h2>Manajemen Pendidikan Inklusi</h2>
+</div>
+
+<div class="grid">
+
+<div class="card">
+<h3>Planning</h3>
+<p>Menentukan tujuan pendidikan dan strategi pencapaian.</p>
+</div>
+
+<div class="card">
+<h3>Organizing</h3>
+<p>Menyusun organisasi dan pembagian tugas.</p>
+</div>
+
+<div class="card">
+<h3>Leading</h3>
+<p>Memotivasi seluruh warga sekolah.</p>
+</div>
+
+<div class="card">
+<h3>Controlling</h3>
+<p>Monitoring dan evaluasi program pendidikan.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="layanan">
+
+<div class="container">
+
+<div class="section-title">
+<h2>Manajemen Layanan Khusus</h2>
+</div>
+
+<div class="timeline">
+
+<div class="step">
+<h3>Psikologis</h3>
+<p>Asesmen awal peserta didik.</p>
+</div>
+
+<div class="step">
+<h3>Fisik</h3>
+<p>Identifikasi kebutuhan fisik.</p>
+</div>
+
+<div class="step">
+<h3>Akademik</h3>
+<p>Analisis kemampuan belajar.</p>
+</div>
+
+<div class="step">
+<h3>Profil ABK</h3>
+<p>Penyusunan layanan individual.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="sarpras">
+
+<div class="container">
+
+<div class="section-title">
+<h2>Sarana dan Prasarana</h2>
+</div>
+
+<div class="grid">
+
+<div class="card">
+<h3>Tunanetra</h3>
+<ul>
+<li>Papan Braille</li>
+<li>Abacus</li>
+<li>Tongkat Tunanetra</li>
+<li>Mesin Ketik Braille</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Tunarungu</h3>
+<ul>
+<li>Audiometer</li>
+<li>Hearing Aid</li>
+<li>Ruang Kedap Suara</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Tunagrahita</h3>
+<ul>
+<li>Tes WISC</li>
+<li>Tes Binet</li>
+<li>Papan Alfabet</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Tunadaksa</h3>
+<ul>
+<li>Finger Goniometer</li>
+<li>Kanavel Table</li>
+<li>Vestibular Board</li>
+</ul>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<div class="section-title">
+<h2>Alur Layanan ABK</h2>
+</div>
+
+<div class="timeline">
+
+<div class="step">1. Pendaftaran</div>
+<div class="step">2. Identifikasi</div>
+<div class="step">3. Asesmen</div>
+<div class="step">4. Profil ABK</div>
+<div class="step">5. Program Pembelajaran</div>
+<div class="step">6. Evaluasi</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="kontak" class="contact">
+
+<div class="container contact-box">
+
+<h2>Hubungi Kami</h2>
+
+<br>
+
+<p>📍 Alamat Sekolah</p>
+<p>📞 08xxxxxxxxxx</p>
+<p>📧 sekolahinklusi@email.com</p>
+<p>🌐 www.sekolahinklusi.sch.id</p>
+
+</div>
